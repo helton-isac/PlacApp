@@ -1,11 +1,13 @@
 package com.hitg.placapp.ui.game.hometeam
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.hitg.placapp.R
+import com.hitg.placapp.ui.game.awayteam.AwayTeamFragment
+import kotlinx.android.synthetic.main.fragment_home_team.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -36,6 +38,20 @@ class HomeTeamFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home_team, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        btNextStep.setOnClickListener {
+            nextScreen()
+        }
+    }
+
+    private fun nextScreen() {
+        val ft = activity?.supportFragmentManager?.beginTransaction()
+        ft?.replace(R.id.containerGame, AwayTeamFragment())
+        ft?.addToBackStack(null)
+        ft?.commit()
     }
 
     companion object {
