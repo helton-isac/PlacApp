@@ -49,6 +49,12 @@ class HomeTeamFragment : Fragment() {
 
     private fun nextScreen() {
         val ft = activity?.supportFragmentManager?.beginTransaction()
+        ft?.setCustomAnimations(
+            R.anim.enter_from_right,
+            R.anim.exit_to_left,
+            R.anim.enter_from_left,
+            R.anim.exit_to_right
+        )
         ft?.replace(R.id.containerGame, AwayTeamFragment())
         ft?.addToBackStack(null)
         ft?.commit()
