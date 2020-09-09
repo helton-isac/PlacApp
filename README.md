@@ -9,4 +9,4 @@ Using:
 * Animation
 * Extension
 
-<img src="./demo/placapp.gif" width="400">
+<img src="./demo/placapp.gif" width="250">
