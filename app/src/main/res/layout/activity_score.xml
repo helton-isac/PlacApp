@@ -99,7 +99,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btGoalHome" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btEndGame"
         style="@style/custom_button"
         android:layout_marginTop="32dp"
         android:text="Finalizar partida"
