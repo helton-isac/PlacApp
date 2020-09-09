@@ -1,7 +1,8 @@
-package com.hitg.placapp
+package com.hitg.placapp.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.hitg.placapp.R
 
 class MainActivity : AppCompatActivity() {
 
