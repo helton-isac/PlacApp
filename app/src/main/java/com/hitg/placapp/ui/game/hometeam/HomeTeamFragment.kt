@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.hitg.placapp.R
+import com.hitg.placapp.ui.extension.setupClearButtonWithAction
 import kotlinx.android.synthetic.main.fragment_home_team.*
 
 // TODO: Rename parameter arguments, choose names that match
@@ -43,6 +44,9 @@ class HomeTeamFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        inputHomeTeam.setupClearButtonWithAction()
+
         btNextStep.setOnClickListener {
             sendHomeTeamName()
         }

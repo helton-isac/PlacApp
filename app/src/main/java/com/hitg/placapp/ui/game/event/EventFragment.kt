@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.hitg.placapp.R
+import com.hitg.placapp.ui.extension.setupClearButtonWithAction
 import com.hitg.placapp.ui.game.hometeam.HomeTeamFragment
 import kotlinx.android.synthetic.main.fragment_event.*
 
@@ -44,6 +45,9 @@ class EventFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        inputEvent.setupClearButtonWithAction()
+
         btNextStep.setOnClickListener {
             nextScreen()
         }
