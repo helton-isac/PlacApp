@@ -1,10 +1,12 @@
 package com.hitg.placapp.ui.game.hometeam
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.hitg.placapp.R
 import com.hitg.placapp.ui.game.awayteam.AwayTeamFragment
 import kotlinx.android.synthetic.main.fragment_home_team.*
@@ -47,7 +49,14 @@ class HomeTeamFragment : Fragment() {
         }
     }
 
+    private fun sendHomeTeamName() {
+        val intent = Intent("FILTER_HOME_TEAM")
+        intent.putExtra("home_team", inputHomeTeam.text.toString())
+        LocalBroadcastManager.getInstance(requireContext()).sendBroadcast(intent)
+    }
+
     private fun nextScreen() {
+        sendHomeTeamName()
         val ft = activity?.supportFragmentManager?.beginTransaction()
         ft?.setCustomAnimations(
             R.anim.enter_from_right,

@@ -6,8 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.hitg.placapp.R
-import com.hitg.placapp.ui.score.ScoreActivity
 import kotlinx.android.synthetic.main.fragment_away_team.*
 
 // TODO: Rename parameter arguments, choose names that match
@@ -49,9 +49,13 @@ class AwayTeamFragment : Fragment() {
     }
 
     private fun nextScreen() {
-        val nextScreen = Intent(activity, ScoreActivity::class.java)
-        startActivity(nextScreen)
-        activity?.finish()
+        sendAwayTeamName()
+    }
+
+    private fun sendAwayTeamName() {
+        val intent = Intent("FILTER_AWAY_TEAM")
+        intent.putExtra("away_team", inputAwayTeam.text.toString())
+        LocalBroadcastManager.getInstance(requireContext()).sendBroadcast(intent)
     }
 
     companion object {

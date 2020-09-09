@@ -24,7 +24,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/tvHomeName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -36,7 +36,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvEventName" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/tvAwayName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Away"
@@ -44,7 +44,7 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/btAwayGoal"
         app:layout_constraintStart_toStartOf="@+id/btAwayGoal"
-        app:layout_constraintTop_toTopOf="@+id/textView4" />
+        app:layout_constraintTop_toTopOf="@+id/tvHomeName" />
 
     <TextView
         android:id="@+id/tvGoalHome"
@@ -55,7 +55,7 @@
         android:textSize="64sp"
         app:layout_constraintEnd_toEndOf="@+id/btGoalHome"
         app:layout_constraintStart_toStartOf="@+id/btGoalHome"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/tvHomeName" />
 
     <TextView
         android:id="@+id/tvAwayGoal"

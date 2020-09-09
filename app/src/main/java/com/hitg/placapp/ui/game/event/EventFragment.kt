@@ -1,10 +1,12 @@
 package com.hitg.placapp.ui.game.event
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.hitg.placapp.R
 import com.hitg.placapp.ui.game.hometeam.HomeTeamFragment
 import kotlinx.android.synthetic.main.fragment_event.*
@@ -48,6 +50,8 @@ class EventFragment : Fragment() {
     }
 
     private fun nextScreen() {
+        sendEventName()
+
         val ft = activity?.supportFragmentManager?.beginTransaction()
         ft?.setCustomAnimations(
             R.anim.enter_from_right,
@@ -60,6 +64,11 @@ class EventFragment : Fragment() {
         ft?.commit()
     }
 
+    private fun sendEventName() {
+        val intent = Intent("FILTER_EVENT")
+        intent.putExtra("event_name", inputEvent.text.toString())
+        LocalBroadcastManager.getInstance(requireContext()).sendBroadcast(intent)
+    }
 
     companion object {
         /**
