@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.hitg.placapp.R
-import com.hitg.placapp.ui.game.awayteam.AwayTeamFragment
 import kotlinx.android.synthetic.main.fragment_home_team.*
 
 // TODO: Rename parameter arguments, choose names that match
@@ -45,7 +44,7 @@ class HomeTeamFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         btNextStep.setOnClickListener {
-            nextScreen()
+            sendHomeTeamName()
         }
     }
 
@@ -57,16 +56,6 @@ class HomeTeamFragment : Fragment() {
 
     private fun nextScreen() {
         sendHomeTeamName()
-        val ft = activity?.supportFragmentManager?.beginTransaction()
-        ft?.setCustomAnimations(
-            R.anim.enter_from_right,
-            R.anim.exit_to_left,
-            R.anim.enter_from_left,
-            R.anim.exit_to_right
-        )
-        ft?.replace(R.id.containerGame, AwayTeamFragment())
-        ft?.addToBackStack(null)
-        ft?.commit()
     }
 
     companion object {
