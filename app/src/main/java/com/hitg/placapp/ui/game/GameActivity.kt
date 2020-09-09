@@ -42,8 +42,10 @@ class GameActivity : AppCompatActivity() {
 
     private fun showEventFragment() {
         val ft = supportFragmentManager.beginTransaction()
-        ft.add(R.id.containerGame, EventFragment())
-        ft.commit()
+        if (supportFragmentManager.findFragmentByTag("EventFragment") == null) {
+            ft.add(R.id.containerGame, EventFragment(), "EventFragment")
+            ft.commit()
+        }
     }
 
     private val mMessageReceiver = object : BroadcastReceiver() {
