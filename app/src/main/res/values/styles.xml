@@ -21,4 +21,27 @@
         <item name="android:background">@drawable/rounded_button</item>
     </style>
 
+    <style name="title_game_wizard">
+        <item name="android:textColor">#FFF</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="subtitle_game_wizard">
+        <item name="android:textColor">#FFF</item>
+        <item name="android:textSize">26sp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="input_wizard">
+        <item name="android:textColorHint">#BBB</item>
+        <item name="android:background">@drawable/custom_edittext</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">64dp</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
 </resources>

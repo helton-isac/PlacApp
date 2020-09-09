@@ -6,4 +6,6 @@
     <string name="button_new_game">Novo Jogo</string>
     <string name="button_exit">Sair</string>
     <string name="developed_by">Desenvolvido por Helton Isac</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
